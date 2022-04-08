@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'tic-tac-toe';
   public isAuthenticated: boolean = false;
 
-  public logout = (): void => {
+  logout(): void {
 
   }
 }

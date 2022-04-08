@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
+
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,13 +12,12 @@ export class LoginComponent implements OnInit {
   public email = '';
   public password = '';
 
-  public onSubmit(): void {
-    this.loginValid = true;
-  }
+  constructor(private authService: AuthService) { };
 
-  constructor() { };
+  onSubmit(): void {
+    this.loginValid = this.authService.login(this.email, this.password)
+  }
 
   ngOnInit(): void {
   };
-
 }

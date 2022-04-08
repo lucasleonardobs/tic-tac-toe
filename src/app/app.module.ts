@@ -24,6 +24,7 @@ import { GameComponent } from './game/game.component';
 import { LoginComponent } from './login/login.component';
 
 import { AuthService } from './login/auth.service'
+import { AuthGuard } from './guards/auth.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,8 @@ import { AuthService } from './login/auth.service'
     MatOptionModule,
   ],
   providers: [
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

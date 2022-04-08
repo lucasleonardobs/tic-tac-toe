@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tic-tac-toe';
-  isAuthenticated = false;
+  public isAuthenticated: boolean = false;
 
-  logout = () => {
+  public logout = (): void => {
 
   }
 }

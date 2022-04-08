@@ -33,7 +33,7 @@ export class GameComponent implements OnInit {
   }
 
   public makeHumanMove(field: number): void {
-    if (!this.playing || Number.isInteger(this.gameState[field])) {
+    if (!this.playing || !Number.isInteger(this.gameState[field])) {
       return;
     }
 
@@ -43,13 +43,13 @@ export class GameComponent implements OnInit {
 
   public makeComputerMove(): void {
     const symbols = {
-      humanPlayer: 'X',
-      computerPlayer: 'O'
+      huPlayer: 'X',
+      aiPlayer: 'O'
     };
 
     const winnerMapping: { [index: string]: any } = {
-      humanPlayer: 'Human Wins!',
-      computerPlayer: 'Computer Wins!',
+      huPlayer: 'Human Wins!',
+      aiPlayer: 'Computer Wins!',
       draw: 'It\'s a Draw!'
     };
 

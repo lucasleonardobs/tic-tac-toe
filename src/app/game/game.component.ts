@@ -33,7 +33,12 @@ export class GameComponent implements OnInit {
   }
 
   public makeHumanMove(field: number): void {
+    if (!this.playing || Number.isInteger(this.gameState[field])) {
+      return;
+    }
 
+    this.gameState[field] = 'X';
+    this.makeComputerMove();
   }
 
   public makeComputerMove(): void {

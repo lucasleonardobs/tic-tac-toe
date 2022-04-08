@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './login/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,10 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'tic-tac-toe';
-  public isAuthenticated: boolean = true;
+  title = 'Tic Tac Toe';
+
+  isAuthenticated: boolean = false;
+
+  constructor(private authService: AuthService) {
+
+  }
 
   logout(): void {
+  }
 
+  ngOnInit() {
+    this.authService.authEmitter.subscribe(
+      (isAuthenticated: boolean) => this.isAuthenticated = isAuthenticated
+    );
   }
 }

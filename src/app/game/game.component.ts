@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import Minimax from 'tic-tac-toe-minimax';
+
+const { GameStep } = Minimax
 
 @Component({
   selector: 'app-game',
@@ -14,11 +17,26 @@ export class GameComponent implements OnInit {
 
   constructor() { }
 
+  public toggleGame(toggle: boolean): void {
+    if (toggle === this.playing) {
+      return;
+    }
+
+    this.gameState = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+    this.winner = undefined;
+
+    if (toggle && this.computerFirst) {
+      this.makeComputerMove();
+    }
+
+    this.playing = toggle;
+  }
+
   public makeHumanMove(field: number): void {
 
   }
 
-  public toggleGame(toggle: boolean): void {
+  public makeComputerMove(): void {
 
   }
 

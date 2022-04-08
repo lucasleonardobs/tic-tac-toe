@@ -1,6 +1,6 @@
 <mat-card>
     <mat-card-content fxLayout="column" fxLayoutAlign="center center">
-        <div gdColumns="repeat(3, 48px)" gdGap="1rem">
+        <div gdColumns="repeat(3, 108px)" gdGap="1rem">
             <div class="game-field" *ngFor="let field of gameState; let i = index" (click)="makeHumanMove(i)">
                 {{ field === 'X' || field === 'O' ? field : '' }}
             </div>

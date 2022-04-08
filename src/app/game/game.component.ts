@@ -42,7 +42,24 @@ export class GameComponent implements OnInit {
   }
 
   public makeComputerMove(): void {
+    const symbols = {
+      humanPlayer: 'X',
+      computerPlayer: 'O'
+    };
 
+    const winnerMapping: { [index: string]: any } = {
+      humanPlayer: 'Human Wins!',
+      computerPlayer: 'Computer Wins!',
+      draw: 'It\'s a Draw!'
+    };
+
+    const result = GameStep(this.gameState, symbols, this.difficulty);
+    this.gameState = result.board;
+
+    if (result.winner) {
+      this.winner = winnerMapping[result.winner]
+      this.playing = false;
+    }
   }
 
   ngOnInit(): void {

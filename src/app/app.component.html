@@ -4,7 +4,7 @@
     <button mat-button routerLink="/"><mat-icon>home</mat-icon></button>
   </span>
   <div fxLayout="row" fxShow="false" fxShow.gt-sm>
-    <button mat-button routerLink="login" *ngIf="!isAuthenticated">
+    <button mat-button routerLink="/login" *ngIf="!isAuthenticated">
       <mat-icon>power_settings_new</mat-icon>
       Login
     </button>
@@ -40,3 +40,5 @@
     Logout
   </button>
 </mat-menu>
+
+<router-outlet></router-outlet>
